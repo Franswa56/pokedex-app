@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; // Si vous avez des styles globaux
+import PokemonGrid from './components/PokemonGrid/PokemonGrid'; // Assurez-vous que le chemin est correct
+import PokemonCard from './components/PokemonCard/PokemonCard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <PokemonGrid/>
+      </main>
+      <footer>
+        {/* Pied de page de l'application */}
+      </footer>
     </div>
   );
 }

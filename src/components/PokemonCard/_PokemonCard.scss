@@ -1,0 +1,36 @@
+.pokemon-card {
+    background-image: linear-gradient(
+        to right bottom, #a4e5cd, #ade7d2, #b7e8d8, #c0eadc, #caebe1);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    width: 48%;
+    margin-top: 40px;
+    border-radius: 15px;
+    height: auto;
+    &__image {
+        width: 80%;
+        position: relative;
+        bottom: 65px;
+    }
+    &__name {
+        font-family: sans-serif;
+        margin: 0;
+        position: relative;
+        bottom: 65px;
+    }
+    &__types {
+        text-decoration: none;
+        display: flex;
+        list-style: none;
+        padding-left: 5px;
+    }
+    &__type {
+        margin-left: 20px;
+        padding: 5px;
+        border-radius: 20px;
+        border: 1px solid white;
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+}
