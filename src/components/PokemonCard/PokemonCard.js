@@ -44,12 +44,16 @@ const typeColors = {
   };
   
 
-  const PokemonCard = ({ name, image, types }) => {
-    const backgroundStyle = types.length > 0 ? typeGradients[types[0].name] : 'linear-gradient(to right, #fff, #fff)';
+  const PokemonCard = ({ name, image, types, pokedexId, style }) => {
+    const backgroundStyle = {
+      backgroundImage: types.length > 0 ? typeGradients[types[0].name] : 'linear-gradient(to right, #fff, #fff)',
+      ...style // Appliquez l'opérateur de propagation pour fusionner le style
+    };
   
     return (
-      <div className="pokemon-card" style={{ backgroundImage: backgroundStyle }}>
-        <img src={image} alt={name} className="pokemon-card__image"/>
+      <div className="pokemon-card" style={backgroundStyle}>
+        <img src={image} alt={name} className="pokemon-card__image" />
+        <p className='pokemon-card__id'># {pokedexId}</p>
         <h2 className="pokemon-card__name">{name}</h2>
         <ul className='pokemon-card__types'>
           {types.map((type, index) => (
