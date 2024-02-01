@@ -3,6 +3,7 @@ import { fetchData } from "../../api/PokemonAPI";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import './_PokemonGrid.scss';
 import SearchBar from "../SearchBar/SearchBar";
+import { Link } from 'react-router-dom';
 
 const PokemonGrid = () => {
   const [allPokemons, setAllPokemons] = useState([]);
@@ -71,13 +72,14 @@ const PokemonGrid = () => {
       <SearchBar onSearchChange={setSearchTerm}/>
       <div className="pokemon-grid">
         {displayedPokemons.map((pokemon, index) => (
-          <PokemonCard
-            key={index} // Utilisez un identifiant unique si disponible
-            name={pokemon.name.fr}
-            image={pokemon.sprites.regular}
-            types={pokemon.types}
-            pokedexId={pokemon.pokedexId}
-          />
+          <Link to={`/pokemon/${pokemon.pokedexId}`} key={index}> {/* Étape 2 */}
+            <PokemonCard
+              name={pokemon.name.fr}
+              image={pokemon.sprites.regular}
+              types={pokemon.types}
+              pokedexId={pokemon.pokedexId}
+            />
+          </Link>
         ))}
         <div ref={loader} style={{ height: '100px', visibility: 'hidden' }}>Charger plus</div>
       </div>
