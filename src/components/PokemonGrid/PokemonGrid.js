@@ -2,9 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { fetchData } from "../../api/PokemonAPI";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import './_PokemonGrid.scss';
+import SearchBar from "../SearchBar/SearchBar";
 
 const PokemonGrid = () => {
   const [allPokemons, setAllPokemons] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [displayedPokemons, setDisplayedPokemons] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 20;
@@ -30,11 +32,16 @@ const PokemonGrid = () => {
 
   // Observer pour le défilement infini
   useEffect(() => {
+
+    if (searchTerm) {
+      return;
+    }
+
     const observer = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
         setCurrentPage((prevPage) => prevPage + 1);
       }
-    }, { threshold: 0.1 });
+    }, { threshold: 1 });
 
     if (loader.current) {
       observer.observe(loader.current);
@@ -45,24 +52,37 @@ const PokemonGrid = () => {
         observer.unobserve(loader.current);
       }
     };
-  }, []);
+  }, [searchTerm]);
+
+  // Filtrer les Pokémon à chaque fois que searchTerm change
+  useEffect(() => {
+    if (searchTerm) {
+      const searchResults = allPokemons.filter(pokemon =>
+        pokemon.name.fr.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setDisplayedPokemons(searchResults);
+    } else {
+      setDisplayedPokemons(allPokemons.slice(0, pageSize + 1))
+    }
+  }, [searchTerm, allPokemons]);
 
   return (
-    <div className="pokemon-grid">
-      {displayedPokemons.map((pokemon, index) => (
-        <PokemonCard
-          key={index} // Utilisez un identifiant unique si disponible
-          style={{ animationDelay: `${75 * index}ms` }}
-          name={pokemon.name.fr}
-          image={pokemon.sprites.regular}
-          types={pokemon.types}
-          pokedexId={pokemon.pokedexId}
-        />
-      ))}
-      <div ref={loader} style={{ height: '100px', visibility: 'hidden' }}>Charger plus</div>
+    <div>
+      <SearchBar onSearchChange={setSearchTerm}/>
+      <div className="pokemon-grid">
+        {displayedPokemons.map((pokemon, index) => (
+          <PokemonCard
+            key={index} // Utilisez un identifiant unique si disponible
+            name={pokemon.name.fr}
+            image={pokemon.sprites.regular}
+            types={pokemon.types}
+            pokedexId={pokemon.pokedexId}
+          />
+        ))}
+        <div ref={loader} style={{ height: '100px', visibility: 'hidden' }}>Charger plus</div>
+      </div>
     </div>
   );
-};
-
+}
 export default PokemonGrid;
 
