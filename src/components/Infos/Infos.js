@@ -8,6 +8,22 @@ function Info({ pokemon }) {
   return (
     <div className="infos">
       <div className="infos__container">
+        <div className="infos__talents">
+          <h3 className="infos__talents-title">Talents</h3>
+          <ul className="infos__talents-list">
+            {pokemon.talents.map((talent, index) => (
+              <li key={index} className="infos__talents-text">
+                {talent.name} {talent.tc ? "(TC)" : ""}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="infos__capture">
+          <h3 className="infos__capture-title">Taux de capture</h3>
+          <h4 className="infos__capture-text">{pokemon.catch_rate}</h4>
+        </div>
+      </div>
+      <div className="infos__container">
         <div className="infos__title">
           <h3>Taille</h3>
           <h4>
@@ -36,24 +52,6 @@ function Info({ pokemon }) {
           </h4>
         </div>
       </div>
-      <div className="infos__container">
-        <div className="infos__talents">
-          <h3 className="infos__talents-title">Talents</h3>
-          <ul className="infos__talents-list">
-            {pokemon.talents.map((talent, index) => (
-              <li key={index} className="infos__talents-text">
-                {talent.name} {talent.tc ? "(TC)" : ""}
-              </li>
-            ))}
-          </ul>
-          </div>
-          <div className="infos__capture">
-          <h3 className="infos__capture-title">Taux de capture</h3>
-          <h4 className="infos__capture-text">
-            {pokemon.catch_rate}
-          </h4>
-        </div>
-        </div>
     </div>
   );
 }
