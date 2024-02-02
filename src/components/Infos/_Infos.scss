@@ -1,24 +1,63 @@
 .infos {
     margin-top: 60px;
-    &__height {
-        
+    &__container {
+        display: flex;
+        justify-content: space-evenly;
     }
     &__title {
-        
+        text-align: center;       
     }
     &__title h3 {
         margin-top: 0px;
         margin-bottom: 0px;
         font-family: sans-serif;
-        color: white;    
+        font-size: 12px;
+        color: white;
     }
     &__title h4 {
         margin-top: 5px;
         font-family: sans-serif;
-        color: white;  
+        color: white;
+        margin-bottom: 0px;  
     }
-    &__container {
-        display: flex;
-        justify-content: space-evenly;
+    &__talents {
+        text-align: center;
+        &-list {
+        list-style: none;
+        padding: 0px;
+        margin-top: 10px;
+        }
+        &-title {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-family: sans-serif;
+            font-size: 24px;
+            color: white;
+        }
+        &-text {
+            font-family: sans-serif;
+            color: white;
+            font-size: 12px;
+            font-weight: 600; 
+            margin-top: 10px  
+        }
+    }
+    &__capture {
+        text-align: center;
+        &-title {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-family: sans-serif;
+            font-size: 24px;
+            color: white;
+        }
+        &-text {
+            font-family: sans-serif;
+            color: white;
+            font-size: 26px;
+            font-weight: 600; 
+            margin-top: 10px  
+        }
+
     }
 }
