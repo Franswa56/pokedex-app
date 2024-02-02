@@ -4,12 +4,13 @@ import PokemonGrid from "./components/PokemonGrid/PokemonGrid"; // Assurez-vous 
 import PokemonCard from "./components/PokemonCard/PokemonCard";
 import HomePage from "./pages/HomePage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PokemonPage from "./pages/PokemonPage";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/pokemon/:pokedexId" element={<VotreComposantDePageDeDétailPokémon />} />  */}
+        <Route path="/pokemon/:pokedexId" element={<PokemonPage />} />
         <Route path="/" element={<HomePage />} /> {/* Correction ici */}
       </Routes>
     </Router>

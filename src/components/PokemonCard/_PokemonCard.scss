@@ -1,5 +1,9 @@
 @import '../../styles/keyframes';
 
+body {
+    margin: 0px;
+}
+
 .pokemon-card {
     background-image: linear-gradient(
         to right bottom, #a4e5cd, #ade7d2, #b7e8d8, #c0eadc, #caebe1);

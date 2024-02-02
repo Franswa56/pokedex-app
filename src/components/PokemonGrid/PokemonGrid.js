@@ -72,14 +72,15 @@ const PokemonGrid = () => {
       <SearchBar onSearchChange={setSearchTerm}/>
       <div className="pokemon-grid">
         {displayedPokemons.map((pokemon, index) => (
-          <Link to={`/pokemon/${pokemon.pokedexId}`} key={index}> {/* Étape 2 */}
+          
             <PokemonCard
               name={pokemon.name.fr}
               image={pokemon.sprites.regular}
               types={pokemon.types}
               pokedexId={pokemon.pokedexId}
+              pokemon={pokemon}
             />
-          </Link>
+          
         ))}
         <div ref={loader} style={{ height: '100px', visibility: 'hidden' }}>Charger plus</div>
       </div>
