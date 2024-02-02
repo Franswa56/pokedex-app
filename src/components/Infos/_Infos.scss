@@ -1,0 +1,24 @@
+.infos {
+    margin-top: 60px;
+    &__height {
+        
+    }
+    &__title {
+        
+    }
+    &__title h3 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: sans-serif;
+        color: white;    
+    }
+    &__title h4 {
+        margin-top: 5px;
+        font-family: sans-serif;
+        color: white;  
+    }
+    &__container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
