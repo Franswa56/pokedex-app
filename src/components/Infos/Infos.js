@@ -7,6 +7,7 @@ function Info({ pokemon }) {
 
   return (
     <div className="infos">
+        <h1 className="infos__desc">{pokemon.category}</h1>
       <div className="infos__container">
         <div className="infos__talents">
           <h3 className="infos__talents-title">Talents</h3>
