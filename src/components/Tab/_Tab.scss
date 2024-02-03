@@ -1,0 +1,24 @@
+.tab-title {
+    font-family: sans-serif;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background: none;
+    border: none;
+    outline: none;
+    &-active {
+        text-decoration: none;
+        color: white;
+        border-bottom: solid 2px white;
+        font-size: 14px;
+        font-weight: bold;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        background: none;
+        outline: none;
+    }
+}

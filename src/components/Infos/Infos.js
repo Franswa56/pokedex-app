@@ -28,28 +28,28 @@ function Info({ pokemon }) {
         <div className="infos__title">
           <h3>Taille</h3>
           <h4>
-            {pokemon.height} <i class="fa-solid fa-arrows-up-down"></i>
+            {pokemon.height} <i className="fa-solid fa-arrows-up-down"></i>
           </h4>
         </div>
         <div className="infos__title">
           <h3>Poids</h3>
           <h4>
-            {pokemon.weight} <i class="fa-solid fa-weight-hanging"></i>
+            {pokemon.weight} <i className="fa-solid fa-weight-hanging"></i>
           </h4>
         </div>
         <div className="infos__title">
           <h3>Sexe</h3>
           <h4>
-            {pokemon.sexe.male} <i class="fa-solid fa-mars"></i>
+            {pokemon.sexe ? pokemon.sexe.male || "/" : "/"} <i className="fa-solid fa-mars logo-bleu"></i>
           </h4>
           <h4>
-            {pokemon.sexe.female} <i class="fa-solid fa-venus"></i>
+            {pokemon.sexe ? pokemon.sexe.female || "/" : "/"} <i className="fa-solid fa-venus logo-rose"></i>
           </h4>
         </div>
         <div className="infos__title">
           <h3>Région</h3>
           <h4>
-            {pokeRegion} <i class="fa-solid fa-map-location-dot"></i>
+            {pokeRegion} <i className="fa-solid fa-map-location-dot"></i>
           </h4>
         </div>
       </div>

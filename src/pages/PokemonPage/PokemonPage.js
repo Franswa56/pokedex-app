@@ -3,6 +3,8 @@ import PageSprite from '../../components/PageSprite/PageSprite'
 import Info from '../../components/Infos/Infos';
 import {typeGradients} from '../../assets/images/colors/colors';
 import './_PokemonPage.scss';
+import Tabs from '../../components/Tabs/Tabs';
+import Stats from '../../components/Stats/Stats';
 
 
 const PokemonPage = () => {
@@ -11,6 +13,10 @@ const PokemonPage = () => {
 
   const backgroundStyle = pokemon.types.length > 0 ? typeGradients[pokemon.types[0].name] : 'linear-gradient(to up, #fff, #fff)';
 
+  const tabs = [
+    { title: 'Infos', content: <Info pokemon={pokemon}/> },
+    { title: 'Stats', content: <Stats stats={pokemon.stats} />}
+  ]
 
   return (
     <div className='pokemon-page' style={{ backgroundImage: backgroundStyle }}>
@@ -20,9 +26,7 @@ const PokemonPage = () => {
        name={pokemon.name}
        types={pokemon.types}
     />
-    <Info
-       pokemon={pokemon}
-    /> 
+    <Tabs tabs={tabs}/> 
     </div>  
   )
 };

@@ -4,6 +4,7 @@
         font-family: sans-serif;
         color: white;
         text-align: center;
+        font-size: 24px;
     }
     &__container {
         display: flex;
@@ -72,4 +73,11 @@
         }
 
     }
+}
+.logo-rose {
+    color: rgb(254, 76, 215);
+
+}
+.logo-bleu {
+    color: rgb(70, 97, 252);
 }
