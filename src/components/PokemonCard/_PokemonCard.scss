@@ -76,3 +76,12 @@ a {
     width: 46%;
     text-decoration: none;
 }
+
+@media (min-width: 451px) {
+   .pokemon-card {
+    width: 100%;
+   }
+   a {
+    width: 15%;
+   }
+}

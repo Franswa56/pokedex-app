@@ -15,3 +15,11 @@
         
     }
 }
+
+@media (min-width: 451px) {
+    .header {
+        &__title {
+            font-size: 120px;
+        }
+    }
+}

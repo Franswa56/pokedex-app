@@ -1,7 +1,5 @@
 .pokepage {
-    text-align: center;
-    position: relative;
-    z-index: -2;
+    text-align: center;   
     &__image {
         width: 80%;
         margin-right: 15px;
@@ -58,6 +56,20 @@
             font-size: 26px;
             color: white;
             margin: 0;
+        }
+    }
+}
+
+@media (min-width: 451px) {
+    .pokepage {
+        max-width: 1200px;
+        margin-left: 100px;
+        margin-right: 100px;
+        &__image {
+            width: 40%;
+        }
+        &__pokeball {
+            width: 30%;
         }
     }
 }

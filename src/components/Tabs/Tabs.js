@@ -7,7 +7,7 @@ const Tabs = ({ tabs }) => {
     console.log("Onglet actif :", activeTab);
   
     return (
-      <div>
+      <div className="tabs">
         <div>
           {tabs.map(tab => (
             <Tab
