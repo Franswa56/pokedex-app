@@ -1,5 +1,5 @@
-import PokemonGrid from "../components/PokemonGrid/PokemonGrid";
-import Header from "../components/Header/Header";
+import PokemonGrid from "../../components/PokemonGrid/PokemonGrid";
+import Header from "../../components/Header/Header";
 import './_Hompage.scss'
 
 

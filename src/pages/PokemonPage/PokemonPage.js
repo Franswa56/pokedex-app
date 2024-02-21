@@ -5,6 +5,7 @@ import {typeGradients} from '../../assets/images/colors/colors';
 import './_PokemonPage.scss';
 import Tabs from '../../components/Tabs/Tabs';
 import Stats from '../../components/Stats/Stats';
+import Evo from '../../components/Evo/Evo.js'
 import { Link } from 'react-router-dom';
 
 const PokemonPage = () => {
@@ -15,7 +16,8 @@ const PokemonPage = () => {
 
   const tabs = [
     { title: 'Infos', content: <Info pokemon={pokemon}/> },
-    { title: 'Stats', content: <Stats stats={pokemon.stats} />}
+    { title: 'Stats', content: <Stats stats={pokemon.stats} />},
+    { title: 'évolutions', content: <Evo evo={pokemon} />}
   ]
 
   return (
