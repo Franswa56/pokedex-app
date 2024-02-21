@@ -5,7 +5,7 @@ import {typeGradients} from '../../assets/images/colors/colors';
 import './_PokemonPage.scss';
 import Tabs from '../../components/Tabs/Tabs';
 import Stats from '../../components/Stats/Stats';
-
+import { Link } from 'react-router-dom';
 
 const PokemonPage = () => {
   const location = useLocation();
@@ -20,6 +20,9 @@ const PokemonPage = () => {
 
   return (
     <div className='pokemon-page' style={{ backgroundImage: backgroundStyle }}>
+      <Link to={'/'}>
+      <i class="fa-solid fa-arrow-left arrow"></i>
+      </Link>
     <PageSprite
        pokedexId={pokemon.pokedexId}
        sprites={pokemon.sprites}

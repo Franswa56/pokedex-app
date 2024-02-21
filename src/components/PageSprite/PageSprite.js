@@ -1,6 +1,7 @@
 import {typeColors} from '../../assets/images/colors/colors';
 import "./_PageSprite.scss"
 import pokeball from '../../assets/images/demiPokeball.webp'
+import shadow from '../../assets/images/shadow.png'
 
 function PageSprite({pokedexId, name,types,sprites}) {
 
@@ -20,6 +21,7 @@ function PageSprite({pokedexId, name,types,sprites}) {
         </div>
         <img src={pokeball} className='pokepage__pokeball'></img>
         <img className='pokepage__image' src={sprites.regular} ></img>
+        <img src={shadow} className='pokepage__shadow'></img>
     </div>
 
 )}

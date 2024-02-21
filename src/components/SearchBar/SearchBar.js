@@ -5,7 +5,7 @@ const SearchBar = ({ onSearchChange }) => {
   return (
     <div className='search-bar'>
 
-    <i class="fa-solid fa-magnifying-glass search-bar__logo"></i>
+    <i className="fa-solid fa-magnifying-glass search-bar__logo"></i>
     <input
       className='search-bar__input'
       type="text"

@@ -3,7 +3,6 @@ import { fetchData } from "../../api/PokemonAPI";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import './_PokemonGrid.scss';
 import SearchBar from "../SearchBar/SearchBar";
-import { Link } from 'react-router-dom';
 
 const PokemonGrid = () => {
   const [allPokemons, setAllPokemons] = useState([]);
@@ -18,6 +17,7 @@ const PokemonGrid = () => {
     const getPokemons = async () => {
       const data = await fetchData();
       if (data) {
+        console.log(data)
         setAllPokemons(data.slice(1)); // Excluez le premier élément si nécessaire
         setDisplayedPokemons(data.slice(1, pageSize + 1)); // Affichez initialement la première "page"
       }
@@ -42,7 +42,7 @@ const PokemonGrid = () => {
       if (entries[0].isIntersecting) {
         setCurrentPage((prevPage) => prevPage + 1);
       }
-    }, { threshold: 1 });
+    }, { threshold: 0.5 });
 
     if (loader.current) {
       observer.observe(loader.current);
@@ -68,13 +68,14 @@ const PokemonGrid = () => {
   }, [searchTerm, allPokemons]);
 
   return (
-    <div>
+    <div className="page">
       <SearchBar onSearchChange={setSearchTerm}/>
       <div className="pokemon-grid">
         {displayedPokemons.map((pokemon, index) => (
           
             <PokemonCard
               name={pokemon.name.fr}
+              key={pokemon.name + index}
               image={pokemon.sprites.regular}
               types={pokemon.types}
               pokedexId={pokemon.pokedexId}
@@ -82,7 +83,7 @@ const PokemonGrid = () => {
             />
           
         ))}
-        <div ref={loader} style={{ height: '100px', visibility: 'hidden' }}>Charger plus</div>
+        <div ref={loader} style={{ height: '200px', visibility: 'hidden' }}>Charger plus</div>
       </div>
     </div>
   );
