@@ -1,12 +1,13 @@
 .pokepage {
-    text-align: center;   
+    text-align: center;
+    padding-top: 25px;
     &__image {
-        width: 80%;
+        width: 50%;
         margin-right: 15px;
-        margin-top: 70px;
+        padding-top: 50px;
     }
     &__pokeball {
-        width: 70%;
+        width: 80%;
         position: absolute;
         right: 0;
         top: 25px;
@@ -17,7 +18,7 @@
         position: absolute;
         left: 14%;
         width: 70%;
-        top: 390px;
+        top: 290px;
         z-index: -2;
         opacity: 0.8;
     }
