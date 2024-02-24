@@ -23,10 +23,11 @@ const PokemonPage = () => {
   console.log(backgroundStyle)
 
   return (
-    <div style={{ backgroundImage: backgroundStyle, height: '100vh' }}>
+    <div className="pokemon-page" style={{ backgroundImage: backgroundStyle }}>
       <Link to={'/'}>
       <i className="fa-solid fa-arrow-left arrow"></i>
       </Link>
+      <div className='pokemon-page__sprite'>
     <PageSprite
        pokedexId={pokemon.pokedexId}
        sprites={pokemon.sprites}
@@ -35,6 +36,7 @@ const PokemonPage = () => {
     />
     <Tabs tabs={tabs}/> 
     </div>  
+    </div>
   )
 };
 
