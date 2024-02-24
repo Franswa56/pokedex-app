@@ -83,7 +83,7 @@ const PokemonGrid = () => {
             />
           
         ))}
-        <div ref={loader} style={{ height: '200px', visibility: 'hidden' }}>Charger plus</div>
+        <div ref={loader} style={{ height: '200px', visibility: 'hidden', width: '100%' }}>Charger plus</div>
       </div>
     </div>
   );

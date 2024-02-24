@@ -25,19 +25,19 @@ const Evo = ({ evo }) => {
       <div className="evo__pre">
         {preEvolutions.map((poke) => (
           <div key={poke.id}>
-            <h3>{poke.name.fr}</h3>
+            <h3 className="evo__name">{poke.name.fr}</h3>
             <img src={poke.sprites.regular} className="evo__image"></img>
           </div>
         ))}
       </div>
       <div className="evo__actual">
-        <h3>{evo.name.fr}</h3>
+        <h3 className="evo__name">{evo.name.fr}</h3>
         <img src={evo.sprites.regular} className="evo__image"></img>
       </div>
       <div className="evo__next">
       {nextEvolutions.map((poke) => (
         <div key={poke.id}>
-          <h3>{poke.name.fr}</h3>
+          <h3 className="evo__name">{poke.name.fr}</h3>
           <img src={poke.sprites.regular} className="evo__image"></img>
           </div>
       ))}

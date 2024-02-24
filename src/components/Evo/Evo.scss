@@ -3,6 +3,13 @@
     align-items: center;
     justify-content: center;
     padding-left: 20px;
+    &__name {
+        font-family: sans-serif;
+        color: white;
+        font-size: 12px;
+        margin: 20px;
+        margin-bottom: 0px;
+    }
     &__image {
         width: 80%;
     }

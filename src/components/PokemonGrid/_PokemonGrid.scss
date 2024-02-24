@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     row-gap: 10px;
-    justify-content: space-around;
+    gap: 20px;
+    
 }
 
 @media (min-width: 451px) {
