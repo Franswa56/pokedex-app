@@ -22,28 +22,59 @@ const Evo = ({ evo }) => {
 
   return (
     <div className="evo">
-      <div className="evo__pre">
-        {preEvolutions.map((poke) => (
-          <div key={poke.id}>
-            <h3 className="evo__name">{poke.name.fr}</h3>
-            <img src={poke.sprites.regular} className="evo__image"></img>
+      {preEvolutions.length > 0 && (
+        <div className="evo__pre">
+          <div key={preEvolutions[0].id}>
+            <h3 className="evo__name">{preEvolutions[0].name.fr}</h3>
+            <img src={preEvolutions[0].sprites.regular} className="evo__image" />
           </div>
-        ))}
-      </div>
-      <div className="evo__actual">
-        <h3 className="evo__name">{evo.name.fr}</h3>
-        <img src={evo.sprites.regular} className="evo__image"></img>
-      </div>
-      <div className="evo__next">
-      {nextEvolutions.map((poke) => (
-        <div key={poke.id}>
-          <h3 className="evo__name">{poke.name.fr}</h3>
-          <img src={poke.sprites.regular} className="evo__image"></img>
+          <div className="evo__actual">
+            <h3 className="evo__name">{evo.name.fr}</h3>
+            <img src={evo.sprites.regular} className="evo__image" />
           </div>
-      ))}
-      </div>
+        </div>
+      )}
+      {preEvolutions.length > 1 && (
+        <div className="evo__pre">
+          <div key={preEvolutions[1].id}>
+            <h3 className="evo__name">{preEvolutions[1].name.fr}</h3>
+            <img src={preEvolutions[1].sprites.regular} className="evo__image" />
+          </div>
+          <div key={preEvolutions[0].id}>
+            <h3 className="evo__name">{preEvolutions[0].name.fr}</h3>
+            <img src={preEvolutions[0].sprites.regular} className="evo__image" />
+          </div>
+        </div>
+      )}
+      {nextEvolutions.length > 0 && (
+        <div className="evo__next">
+          {preEvolutions.length <= 1 && (
+            <div className="evo__actual">
+              <h3 className="evo__name">{evo.name.fr}</h3>
+              <img src={evo.sprites.regular} className="evo__image" />
+            </div>
+          )}
+          <div key={nextEvolutions[0].id}>
+            <h3 className="evo__name">{nextEvolutions[0].name.fr}</h3>
+            <img src={nextEvolutions[0].sprites.regular} className="evo__image" />
+          </div>
+        </div>
+      )}
+      {nextEvolutions.length > 1 && (
+        <div className="evo__next">
+          {preEvolutions.length <= 1 && (
+            <div key={nextEvolutions[0].id}>
+            <h3 className="evo__name">{nextEvolutions[0].name.fr}</h3>
+            <img src={nextEvolutions[0].sprites.regular} className="evo__image" />
+          </div>
+          )}
+          <div key={nextEvolutions[1].id}>
+            <h3 className="evo__name">{nextEvolutions[1].name.fr}</h3>
+            <img src={nextEvolutions[1].sprites.regular} className="evo__image" />
+          </div>
+        </div>
+      )}
     </div>
   );
-};
-
+          }
 export default Evo;

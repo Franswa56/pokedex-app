@@ -1,5 +1,6 @@
 .evo {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-left: 20px;
@@ -11,12 +12,21 @@
         margin-bottom: 0px;
     }
     &__image {
-        width: 80%;
+        width: 60%;
     }
     &__pre {
         display: flex;
     }
     &__next {
         display: flex;
+    }
+}
+
+@media (min-width: 451px) {
+    .evo {
+        &__image {
+            width: 50%;
+
+        }
     }
 }
