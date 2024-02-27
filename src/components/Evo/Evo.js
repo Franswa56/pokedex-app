@@ -58,7 +58,7 @@ const Evo = ({ evo }) => {
                 <img src={preEvolutions[preEvolutions.length - 1].sprites.regular} className="evo__image" />
               </div>
               <div className="evo__arrow">
-              {evo.evolution.pre[0] ? <span>{evo.evolution.pre[0].condition}</span> : null}
+              {evo.evolution.pre[1] ? <span>{evo.evolution.pre[1].condition}</span> : null}
               </div>
               <div className="evo__actual">
                 <h3 className="evo__name">{evo.name.fr}</h3>

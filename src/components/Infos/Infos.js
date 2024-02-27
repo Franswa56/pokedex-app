@@ -12,11 +12,11 @@ function Info({ pokemon }) {
         <div className="infos__talents">
           <h3 className="infos__talents-title">Talents</h3>
           <ul className="infos__talents-list">
-            {pokemon.talents.map((talent, index) => (
+            {pokemon.taments ? pokemon.talents.map((talent, index) => (
               <li key={index} className="infos__talents-text">
                 {talent.name} {talent.tc ? "(TC)" : ""}
               </li>
-            ))}
+            )) : <h3 className="infos__talents-list infos__talents-text">aucun talents</h3>}
           </ul>
         </div>
         <div className="infos__capture">

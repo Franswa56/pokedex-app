@@ -17,7 +17,6 @@ const PokemonGrid = () => {
     const getPokemons = async () => {
       const data = await fetchData();
       if (data) {
-        console.log(data)
         setAllPokemons(data.slice(1)); // Excluez le premier élément si nécessaire
         setDisplayedPokemons(data.slice(1, pageSize + 1)); // Affichez initialement la première "page"
       }

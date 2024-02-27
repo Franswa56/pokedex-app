@@ -14,7 +14,7 @@ const Tabs = ({ tabs }) => {
   
   return (
     <div className="tabs">
-      <div>
+      <div className="tabs__list">
         {tabs.map(tab => (
           <Tab
             key={tab.title}

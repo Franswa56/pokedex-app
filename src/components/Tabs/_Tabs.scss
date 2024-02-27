@@ -5,29 +5,33 @@
 .tabs {
     display: flex;
     flex-direction: column;
+    &__list {
+      display: flex;
+      justify-content: center;
+    }
 }
-.tab-content-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden; // Cache les éléments débordant pendant l'animation
-    height: 300px;
-  }
+
   
   .tab-content {
     position: absolute;
     width: 100%;
     // Transition pour que le contenu s'adapte en douceur
     transition: opacity 0.3s ease;
+    &-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden; 
+      height: 300px;
+    }
   }
   
   // Animation d'entrée
   .slide-enter {
     transform: translateX(-100%);
-  }
-  
-  .slide-enter-active {
-    transform: translateX(0);
-    transition: transform 400ms ease-out;
+    &-active {
+      transform: translateX(0);
+      transition: transform 400ms ease-out;
+    }
   }
   
   // Animation de sortie
@@ -35,11 +39,10 @@
     position: absolute;
     top: 0;
     transform: translateX(0);
-  }
-  
-  .slide-exit-active {
-    transform: translateX(100%);
-    transition: transform 300ms ease-in;
+    &-active {
+      transform: translateX(100%);
+      transition: transform 300ms ease-in;
+    }
   }
 
 
