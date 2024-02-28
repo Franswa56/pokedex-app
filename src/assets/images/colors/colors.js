@@ -39,3 +39,19 @@ export const typeColors = {
     Fée: 'linear-gradient(to right, #EC8CE5, #F3A7E7)',
     Normal: 'linear-gradient(to right, #9298A4, #A3A49E)',
   };
+
+  export function darkenColor(colorHex, percent) {
+    // Convertit hex en RGB
+    let r = parseInt(colorHex.substring(1, 3), 16);
+    let g = parseInt(colorHex.substring(3, 5), 16);
+    let b = parseInt(colorHex.substring(5, 7), 16);
+    // Calcule la nouvelle valeur de chaque composant
+    r = parseInt(r * (100 - percent) / 100);
+    g = parseInt(g * (100 - percent) / 100);
+    b = parseInt(b * (100 - percent) / 100);
+    // Convertit les nouvelles valeurs RGB en hex
+    r = r.toString(16).padStart(2, '0');
+    g = g.toString(16).padStart(2, '0');
+    b = b.toString(16).padStart(2, '0');
+    return `#${r}${g}${b}`;
+  }

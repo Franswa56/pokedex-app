@@ -1,5 +1,4 @@
 .tab-content {
-    height: 270px;
 }
 
 .tabs {
@@ -13,15 +12,13 @@
 
   
   .tab-content {
-    position: absolute;
     width: 100%;
-    // Transition pour que le contenu s'adapte en douceur
     transition: opacity 0.3s ease;
+    height: auto; 
     &-wrapper {
       position: relative;
-      width: 100%;
-      overflow: hidden; 
-      height: 300px;
+      width: 100%; 
+      height: auto;   
     }
   }
   
@@ -52,6 +49,8 @@
         margin-left: 100px;
         margin-right: 100px;
         text-align: center;
+        width: 90%;
+        padding-bottom: 20px;
     }
     
 }

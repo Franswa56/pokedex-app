@@ -30,9 +30,9 @@ const fetchPoke = async (id) => {
 
 export { fetchPoke };
 
-const fetchRegionalData = async () => {
+const fetchRegionalData = async (gen) => {
   try {
-    const response = await axios.get('https://tyradex.vercel.app/api/v1/gen/6'); 
+    const response = await axios.get(`https://tyradex.vercel.app/api/v1/gen/${gen}`); 
     const data = response.data;
     return data; 
   } catch (error) {

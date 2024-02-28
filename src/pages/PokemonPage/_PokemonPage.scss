@@ -1,12 +1,14 @@
 
 .pokemon-page {
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: blue;
+    min-height: 100vh;
     &__sprite {
         margin-top: 25px;
         display: flex;
         flex-direction: column;
+
         gap: 25px;
     }
 }
@@ -24,7 +26,8 @@
 @media (min-width: 451px) {
     .pokemon-page {
         width: 100%;
-        height: auto;
-        
+        &__sprite {
+            align-items: center;
+        }      
     }
 }

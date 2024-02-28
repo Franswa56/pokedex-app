@@ -16,7 +16,7 @@
     }
     &__pre {
         display: flex;
-        gap: 30px;
+        gap: 50px;
     }
     &__next {
         display: flex;
@@ -29,8 +29,7 @@
         width: auto;
         position: absolute;
         background: transparent;
-        //transform: translateY(360%) translateX(155%);
-        transform: translateY(80px) translateX(100px);
+        transform: translateY(60px) translateX(82px);
         clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 50%, 0% 0%);
         overflow: visible;
         &:before {

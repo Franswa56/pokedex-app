@@ -1,6 +1,7 @@
 import "./Evo.scss";
 import React, { useEffect, useState } from "react";
 import { fetchPoke } from "../../api/PokemonAPI";
+import { Link } from "react-router-dom";
 
 const Evo = ({ evo }) => {
   const [preEvolutions, setPreEvolutions] = useState([]);
@@ -39,7 +40,9 @@ const Evo = ({ evo }) => {
             <div className="evo__pre">
               <div key={preEvolutions[0].id}>
                 <h3 className="evo__name">{preEvolutions[0].name.fr}</h3>
-                <img src={preEvolutions[0].sprites.regular} className="evo__image" />
+                  <Link to={`/pokemon/${preEvolutions[0].pokedexId}`} state={preEvolutions[0]}>
+                    <img src={preEvolutions[0].sprites.regular} className="evo__image" />
+                  </Link>
               </div>
               <div className="evo__arrow">
                 <span>{evo.evolution.pre[0].condition}</span>
@@ -57,9 +60,7 @@ const Evo = ({ evo }) => {
                 <h3 className="evo__name">{preEvolutions[preEvolutions.length - 1].name.fr}</h3>
                 <img src={preEvolutions[preEvolutions.length - 1].sprites.regular} className="evo__image" />
               </div>
-              <div className="evo__arrow">
-              {evo.evolution.pre[1] ? <span>{evo.evolution.pre[1].condition}</span> : null}
-              </div>
+              <div className="evo__arrow">{evo.evolution.pre[1] ? <span>{evo.evolution.pre[1].condition}</span> : <span>{evo.evolution.pre[0].condition}</span>}</div>
               <div className="evo__actual">
                 <h3 className="evo__name">{evo.name.fr}</h3>
                 <img src={evo.sprites.regular} className="evo__image" />
