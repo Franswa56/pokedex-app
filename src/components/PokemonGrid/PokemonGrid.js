@@ -77,7 +77,7 @@ const PokemonGrid = () => {
               key={pokemon.name + index}
               image={pokemon.sprites.regular}
               types={pokemon.types}
-              pokedexId={pokemon.pokedexId}
+              pokedexId={pokemon.pokedex_id}
               pokemon={pokemon}
             />
           
